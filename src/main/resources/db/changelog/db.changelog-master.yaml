@@ -1,0 +1,374 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: paklei
+      changes:
+        - createTable:
+            tableName: bancos
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+        - createSequence:
+            sequenceName: sec_id_bancos
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: bocas
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_bocas
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: colores_ojo
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_colores_ojo
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: companias_telefono
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_companias_telefono
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: estados
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_estados
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: municipios
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: estado_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_municipios_estado
+                    references: estados(id)
+        - createSequence:
+            sequenceName: sec_id_municipios
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: frentes
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_frentes
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: narices
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_narices
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: orejas
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_orejas
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: paises
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_paises
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: colores_piel
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_colores_piel
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: tipos_cabello
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_tipos_cabello
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false
+            
+        - createTable:
+            tableName: tipos_telefono
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activo
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - createSequence:
+            sequenceName: sec_id_tipos_telefono
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            startValue: 1
+            ordered: true
+            cycle: false      
+              

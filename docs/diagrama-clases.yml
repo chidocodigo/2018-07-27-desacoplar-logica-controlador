@@ -1,0 +1,41 @@
+@startuml
+
+title Diagrama de clases Catálogos generales
+
+abstract class Catalogo {
+    - nombre: String
+    - activo: boolean
+}
+
+class Pais
+class Estado
+class Municipio
+class Banco
+class Boca
+class ColorOjo
+class Frente
+class Nariz
+class Oreja
+class ColorPiel
+class TipoCabello
+class TipoTelefono
+class CompaniaTelefono
+
+Catalogo <|-- Banco
+Catalogo <|-- Boca
+Catalogo <|-- ColorOjo
+Catalogo <|-- CompaniaTelefono
+Catalogo <|-- Estado
+Catalogo <|-- Municipio
+Catalogo <|-- Frente
+Catalogo <|-- Nariz
+Catalogo <|-- Oreja
+Catalogo <|-- Pais
+Catalogo <|-- ColorPiel
+Catalogo <|-- TipoCabello
+Catalogo <|-- TipoTelefono
+
+Estado *-- Municipio
+
+Municipio -[hidden]> Catalogo
+@enduml
